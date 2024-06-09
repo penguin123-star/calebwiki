@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalebWiki</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('Background.jpg') no-repeat center center fixed; /* For a background image */
+            background-size: cover; /* Ensure the background covers the entire page */
+            /* background-color: #f0f0f0; */ /* Uncomment this line if you prefer a solid color background */
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            background: rgba(170, 0, 0, 0.8); /* White background with some transparency for readability */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        nav {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #740000;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .person-section {
+            display: none;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: rgba(148, 0, 0, 0.9); /* Slightly more opaque for better readability */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .person-section img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .before-text {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 5px;
+            font-size: 18px;
+        }
+
+        .image-container {
+            position: relative;
+        }
+
+        .person-section p {
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CalebWiki</h1>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showPerson('belac-caleb')">Belac/Caleb</a></li>
+                <li><a href="#" onclick="showPerson('mike')">Mike</a></li>
+            </ul>
+        </nav>
+        <section id="belac-caleb" class="person-section">
+            <h2>Belac/Caleb</h2>
+            <img src="caleb.jpg" alt="Belac/Caleb Image 1">
+            <div class="image-container">
+                <img src="caleb2.jpg" alt="Belac/Caleb Image 2">
+                <div class="before-text">BEFORE</div>
+            </div>
+            <h1>Caleb was a cool programmer, but a sprit possessed him and toke over him so he roams maryland looking for a victim...</h1>
+        </section>
+        <section id="mike" class="person-section">
+            <h2>Mike</h2>
+            <img src="mike.jpg" alt="Mike Image 1">
+            <div class="image-container">
+                <img src="mike3.jpg" alt="Mike Image 2">
+                <div class="before-text">BEFORE</div>
+            </div>
+            <h1>Mike was a loud, funny person and loved games until Belac got possessed and now he runs looking for someone who survived but then Caleb found him...</h1>
+        </section>
+    </div>
+    <script>
+        function showPerson(personId) {
+            document.querySelectorAll('.person-section').forEach(section => {
+                section.style.display = 'none';
+            });
+            if (personId) {
+                document.getElementById(personId).style.display = 'block';
+            }
+        }
+
+        // Initially hide all sections
+        document.addEventListener('DOMContentLoaded', () => {
+            showPerson(null);
+        });
+    </script>
+</body>
+</html>
